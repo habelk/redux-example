@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App App text 1`] = `
+<div>
+  React Testing
+</div>
+`;
+
+exports[`App Test the text 1`] = `
+<div>
+  React Testing
+</div>
+`;

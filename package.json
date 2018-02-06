@@ -1,5 +1,5 @@
 {
-  "name": "pluralsight-redux-starter",
+  "name": "redux-example",
   "version": "1.0.0",
   "description": "Starter kit for React and Redux Pluralsight course by Cory House",
   "scripts": {
@@ -7,7 +7,10 @@
     "start": "npm-run-all --parallel  open:src lint:watch",
     "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
-    "lint:watch": "npm run lint -- --watch"
+    "lint:watch": "npm run lint -- --watch",
+    "jest": "jest --config jestconfig.json",
+    "test:nightwatch": "WEBPACK_CONFIG_PATH=$(pwd)/webpack.config.js node ./node_modules/terra-toolkit/lib/scripts/nightwatch-process.js --env default-tiny,default-small,default-medium,default-large,default-huge",
+    "test": "npm run jest & npm run test:nightwatch"
   },
   "author": "Cory House",
   "license": "MIT",
@@ -38,7 +41,10 @@
     "compression": "1.6.1",
     "cross-env": "1.0.7",
     "css-loader": "0.23.1",
-    "enzyme": "2.2.0",
+    "enzyme": "2.8.2",
+    "enzyme-react-intl": "^1.4.5",
+    "enzyme-redux": "^0.1.6",
+    "enzyme-to-json": "^1.5.1",
     "eslint": "2.9.0",
     "eslint-plugin-import": "1.6.1",
     "eslint-plugin-react": "5.0.1",
@@ -60,7 +66,12 @@
     "url-loader": "0.5.7",
     "webpack": "1.13.0",
     "webpack-dev-middleware": "1.6.1",
-    "webpack-hot-middleware": "2.10.0"
+    "webpack-hot-middleware": "2.10.0",
+    "babel-jest": "^20.0.0",
+    "terra-i18n-plugin": "^1.0.0",
+    "jest": "^19.0.0",
+    "nightwatch": "^0.9.19",
+    "terra-toolkit": "^1.2.2"
   },
   "repository": {
     "type": "git",
